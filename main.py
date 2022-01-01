@@ -1,5 +1,18 @@
 import os
 from credentials import API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET, ACCOUNT_ID, ACCOUNT_NAME
+# You must create a credentials files named credentials.py.
+# It will contain the following lines.
+
+#API_KEY = ""
+#API_SECRET = ""
+
+#ACCESS_TOKEN = ""
+#ACCESS_TOKEN_SECRET = ""
+
+#ACCOUNT_ID = ""
+#ACCOUNT_NAME = ""
+
+#You must use your own api keys/tokens which you will get in developer.twitter.com
 
 import glob
 import tweepy
@@ -51,8 +64,8 @@ def replyTweet(tweet,tweetId):
     )
 
 def pickImg():
-    randNumber = random.randint(1,34);
-    return str(randNumber) + ".jpg";
+    randNumber = random.randint(1,40); ##First must be one, second number the ammmount of images
+    return str(randNumber) + ".jpg"; #Image names must be named numerically.
 
 
 def mediaReply(tweet,tweetId):
@@ -60,7 +73,7 @@ def mediaReply(tweet,tweetId):
     api, auth = authenticate();
     
     current = os.getcwd();
-    os.chdir("./images/");
+    os.chdir("./images/"); #We move to images folder
     media = api.media_upload(pickImg());
     
 
@@ -72,7 +85,7 @@ def mediaReply(tweet,tweetId):
         exclude_reply_user_ids = 1390871003333541892,
         media_ids = [media.media_id_string]
     )
-    os.chdir(current);
+    os.chdir(current); #We return to our main folder
 
 
 
