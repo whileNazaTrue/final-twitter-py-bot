@@ -26,7 +26,9 @@ import random
 class StdOutListener(StreamListener):
     def on_status(self,status):
         tweetId = status.id;
-        tweet = "Bot testing.";
+        phrases = ["Here's your social credit score.", "Enjoy your social credit score", "Bing chilling", "Here you go, this is your score"];
+        
+        tweet = random.choice(phrases);
         print("Found a tweet. Tweet number " + status.id_str + " from user id " + str(status.user.id) + " whose username is " + status.user.screen_name)
         
         
