@@ -1,16 +1,16 @@
 import os
-from credentials import API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET, ACCOUNT_ID, ACCOUNT_NAME
-# You must create a credentials files named credentials.py.
-# It will contain the following lines.
+from dotenv import load_dotenv
+#from credentials import API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET, ACCOUNT_ID, ACCOUNT_NAME This is if you want to run it locally.
+#If no, use dotenv
 
-#API_KEY = ""
-#API_SECRET = ""
+API_KEY = os.getenv("API_KEY")
+API_SECRET = os.getenv("API_SECRET")
 
-#ACCESS_TOKEN = ""
-#ACCESS_TOKEN_SECRET = ""
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+ACCESS_TOKEN_SECRET = os.getenv("ACCESS_TOKEN_SECRET")
 
-#ACCOUNT_ID = ""
-#ACCOUNT_NAME = ""
+ACCOUNT_ID = os.getenv("ACCOUNT_ID")
+ACCOUNT_NAME = os.getenv("ACCOUNT_NAME")
 
 #You must use your own api keys/tokens which you will get in developer.twitter.com
 
