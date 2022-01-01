@@ -3,6 +3,10 @@ from dotenv import load_dotenv
 #from credentials import API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET, ACCOUNT_ID, ACCOUNT_NAME This is if you want to run it locally.
 #If no, use dotenv
 
+load_dotenv();
+
+#Envs
+
 API_KEY = os.getenv("API_KEY")
 API_SECRET = os.getenv("API_SECRET")
 
