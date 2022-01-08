@@ -35,15 +35,16 @@ class StdOutListener(StreamListener):
         tweet = random.choice(phrases);
         print("Found a tweet. Tweet number " + status.id_str + " from user id " + str(status.user.id) + " whose username is " + status.user.screen_name)
         
-        
-
-        if status.user.screen_name == ACCOUNT_NAME:
-            print("That's my own tweet! I'll ignore it.");
-        elif hasattr(status,"retweeted_status")==True:
-            print("That's a retweet. Not my business.");
-        else:
-            print("Not my tweet. Replying!")
-            mediaReply(tweet,tweetId);
+        try:
+            if status.user.screen_name == ACCOUNT_NAME:
+                print("That's my own tweet! I'll ignore it.");
+            elif hasattr(status,"retweeted_status")==True:
+                print("That's a retweet. Not my business.");
+            else:
+                print("Not my tweet. Replying!")
+                mediaReply(tweet,tweetId);
+        except tweepy.TweepError:
+            print("There was an error while tweeting")
         #replyTweet(tweet,tweetId);
         
 
