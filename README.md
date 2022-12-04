@@ -6,6 +6,8 @@ It is essential for you to make a credentials.py file if you want to use this yo
 
 If you want to deploy it to heroku, you are going to need a .env file.
 
+You will have to create a folder called images to get it to run.
+
 I have commented the lines where the credentials.py are used since I deploy this online.
 
 I'd recommend of course using it for other purposes, rather than being exactly the same as @BotSocialCredit. You can change the images and maybe even figure out ways to make it funnier!
